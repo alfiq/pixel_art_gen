@@ -1,0 +1,36 @@
+[project]
+name = "pixel-art-gen"
+version = "0.1.0"
+description = "A data-free procedural generation engine for high-quality pixel art assets."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.136.1",
+    "numpy>=2.4.4",
+    "pillow>=12.2.0",
+    "uvicorn>=0.46.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "hypothesis>=6.152.1",
+    "mkdocs-material>=9.7.6",
+    "mkdocstrings-python>=2.0.3",
+    "pytest>=9.0.3",
+    "ruff>=0.15.11",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "D", "ANN"]
+ignore = ["D100", "D104"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

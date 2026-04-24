@@ -1,0 +1,65 @@
+site_name: PixelForge.ai
+site_description: Autonomous Procedural Pixel Art Engine
+site_author: Alfito
+site_url: https://yourusername.github.io/pixel-art-gen/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_root_heading: true
+            show_source: true
+
+nav:
+  - Welcome: index.md
+  - Architecture: ARCHITECTURE.md
+  - Verification Pipeline: VERIFICATION_PIPELINE.md
+  - API Reference:
+      - Generator: api/generator.md
+      - Palette: api/palette.md
+      - Renderer: api/renderer.md
+  - Development:
+      - Testing: tests/README.md

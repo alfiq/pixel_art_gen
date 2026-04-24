@@ -1,0 +1,20 @@
+# Handle line endings automatically for files detected as text 
+# and leave binary files untouched.
+* text=auto
+
+# Standard Python patterns
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# Binary files
+*.png binary
+*.webp binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

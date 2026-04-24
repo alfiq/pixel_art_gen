@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge | Procedural Art Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="pixel-box"></span>
+                <h1>PixelForge<span>.ai</span></h1>
+            </div>
+            <p class="subtitle">Autonomous Procedural Sprite Generation</p>
+        </header>
+
+        <section class="display-section">
+            <div class="sprite-card">
+                <div class="sprite-wrapper">
+                    <img id="sprite-image" src="" alt="Generated Sprite" class="pixelated">
+                    <div id="loader" class="loader hidden"></div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="label">Symmetry</span>
+                        <span class="value">Horizontal</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Architecture</span>
+                        <span class="value" id="res-label">16x16</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-card">
+                <h2>Control Panel</h2>
+                
+                <div class="control-group">
+                    <label for="algorithm">Generation Logic</label>
+                    <select id="algorithm">
+                        <option value="symmetrical">Mirror-Mask v1</option>
+                        <option value="organic">Cellular Growth</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Scale Factor</label>
+                    <div class="scale-buttons">
+                        <button class="active" data-val="16">16x</button>
+                        <button data-val="32">32x</button>
+                        <button data-val="64">64x</button>
+                    </div>
+                </div>
+
+                <div class="button-wrapper">
+                    <button id="generate-btn" class="primary-btn">
+                        <span class="btn-text">Evolve Sprite</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                    <button id="download-btn" class="secondary-btn">Download Asset</button>
+                </div>
+
+                <div class="palette-preview" id="palette-preview">
+                    <!-- Ramps will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h3>Recent Evolutions</h3>
+            <div class="gallery-grid" id="history">
+                <!-- History of generated sprites -->
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
