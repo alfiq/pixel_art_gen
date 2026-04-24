@@ -6,11 +6,12 @@ build:
     python: "3.13"
   jobs:
     post_create_environment:
-      # Install uv
-      - curl -LsSf https://astral-sh/uv/install.sh | sh
-      # Create virtualenv and install dependencies
+      # Use pip to install uv reliably in this environment
+      - pip install uv
+      # Sync dependencies using uv
       - uv sync --all-groups
     post_build:
+      # Build the final documentation
       - uv run mkdocs build
 
 mkdocs:
