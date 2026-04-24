@@ -17,6 +17,7 @@ dev = [
     "hypothesis>=6.152.1",
     "mkdocs-material>=9.7.6",
     "mkdocstrings-python>=2.0.3",
+    "pymdown-extensions>=10.21.2",
     "pytest>=9.0.3",
     "ruff>=0.15.11",
 ]

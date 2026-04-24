@@ -7,8 +7,8 @@ Before finalizing any feature or bugfix, the following verification pipeline mus
 
 ### 1. Automated Verification
 Run the following command from the root directory:
-```powershell
-.venv\Scripts\python.exe scripts\verify_repo.py
+```bash
+uv run scripts/verify_repo.py
 ```
 
 This script automatically validates:
@@ -19,7 +19,7 @@ This script automatically validates:
 
 ### 2. Manual Verification (Artifacts & UI)
 If the change affects the User Interface or the Art Algorithm:
-1. Start the web server: .venv\Scripts\python.exe main.py.
+1. Start the web server: `uv run main.py`.
 2. Generate at least 5 sprites to check for visual artifacts.
 
 ## Failure Policy

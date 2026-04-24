@@ -16,8 +16,8 @@ This project produces high-quality, symmetrical pixel art (creatures, icons, ite
 
 ## Mandatory Verification Workflow
 To ensure that code, docs, and behavior remain in sync, all developers must run the **[Verification Pipeline](docs/VERIFICATION_PIPELINE.md)** before finalizing changes.
-```powershell
-.venv\Scripts\python.exe scripts\verify_repo.py
+```bash
+uv run scripts/verify_repo.py
 ```
 
 ## Setup and Environment
@@ -29,7 +29,7 @@ To ensure that code, docs, and behavior remain in sync, all developers must run 
 ### Local Development
 1. Clone the repository.
 2. Initialize the environment: `uv sync`.
-3. Run the dashboard: `uv run main.py`.
+3. Start the web server: `uv run main.py`.
 4. Run tests: `uv run pytest`.
 
 ## Coding Standards

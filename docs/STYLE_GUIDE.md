@@ -33,8 +33,8 @@ No work is considered complete if `ruff check .` returns errors.
 
 ## 4. Integrity Sync
 No architectural or feature change is finalized without running the **Verification Pipeline**:
-```powershell
-.venv\Scripts\python.exe scripts\verify_repo.py
+```bash
+uv run scripts/verify_repo.py
 ```
 This script ensures that the `ARCHITECTURE.md`, `README.md`, and code behaviors are byte-perfect in their alignment. It also enforces the **Zero-Emoji Policy**, **Docstring Standards**, and **Config Integrity**.
 
