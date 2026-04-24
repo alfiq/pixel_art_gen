@@ -5,21 +5,12 @@ build:
   tools:
     python: "3.13"
   jobs:
-    post_create_environment:
+    install:
       # Use pip to install uv reliably in this environment
       - pip install uv
-      # Sync dependencies using uv
-      - uv sync --all-groups
-    post_build:
-      # Build the final documentation
-      - uv run mkdocs build
+      # Install project and all extras directly into the RTD managed environment
+      # This avoids the "Double Environment" issue where uv sync creates a separate .venv
+      - uv pip install .[dev]
 
 mkdocs:
   configuration: mkdocs.yml
-
-python:
-  install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - dev
