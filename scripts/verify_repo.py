@@ -64,11 +64,11 @@ def main() -> None:
     errors = []
 
     print("--- 1. Static Analysis (Ruff) ---")
-    if not run_command(".venv\\Scripts\\python.exe -m ruff check ."):
+    if not run_command(f"{sys.executable} -m ruff check ."):
         errors.append("Linter (Ruff) failed.")
 
     print("\n--- 2. Behavioral Tests (Pytest) ---")
-    if not run_command(".venv\\Scripts\\python.exe -m pytest"):
+    if not run_command(f"{sys.executable} -m pytest"):
         errors.append("Tests (Pytest) failed.")
 
     print("\n--- 3. Project Configuration Integrity ---")
